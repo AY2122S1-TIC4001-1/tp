@@ -1,7 +1,6 @@
 package seedu.duke;
 
-
-// This class stores the module information.
+// Create Test Pull Request
 public class Module {
 
   String moduleCode;
