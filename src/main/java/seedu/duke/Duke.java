@@ -9,6 +9,7 @@ import java.io.IOException;
 public class Duke {
 
     private Ui ui;
+    private UserList myModules;
     private NusModList allModules;
 
     public static void main(String[] args) throws IOException {
@@ -24,8 +25,10 @@ public class Duke {
     private void start() throws IOException {
         ui = new Ui();
         ui.welcome();
+        myModules = new UserList();
         Api api = new Api();
         allModules = api.getAllModulesDetailed();
+
 
     }
 
@@ -34,7 +37,7 @@ public class Duke {
         do {
             String userInstruction = ui.readCommand();
             command = new Parser().parse(userInstruction);
-            command.execute();
+            command.execute(myModules, ui, allModules);
         } while (!ExitCommand.isExit(command));
     }
 

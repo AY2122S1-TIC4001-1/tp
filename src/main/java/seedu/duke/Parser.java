@@ -1,9 +1,6 @@
 package seedu.duke;
 
-import seedu.duke.command.Command;
-import seedu.duke.command.ExitCommand;
-import seedu.duke.command.ListCommand;
-import seedu.duke.command.PlaceholderCommand;
+import seedu.duke.command.*;
 
 public class Parser {
     public static Command parse(String fullCommand) {
@@ -24,7 +21,7 @@ public class Parser {
             return new PlaceholderCommand("view");
 
         case ("delete"):
-            return new PlaceholderCommand("delete");
+            return new DeleteCommand(fullCommand);
 
         case ("exit"):
         case ("bye"):

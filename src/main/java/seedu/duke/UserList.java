@@ -22,7 +22,7 @@ public class UserList {
         }
     }
 
-    public void deleteTask(String line) {
+    public void deleteModule(String line) {
         try {
             checkListEmpty(userList);
             String theStrIndex = line.substring(7);
